@@ -1,0 +1,78 @@
+/* Verde: #60a726 */
+/* Celeste: #0093df */
+/* Rojo: #ab2f2f */
+/* Par: #ebebeb */
+/* Impar: #f6f6f6 */
+
+* {
+    font-size: 20px;
+}
+@media(max-width: 479px) {
+    * {
+        font-size: 14px;
+    }
+}
+@media(max-width: 319px) {
+    * {
+        font-size: 12px;
+    }
+}
+* {
+    text-shadow: none;    
+    outline: none;
+    color: #373737;
+    font-smoothing: antialiased;
+}
+.full-width {
+    width: 100%;
+}
+.ui-page-active {
+    background: url(../imagenes/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+.ui-header {
+    background-color: #333 !important;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+}
+.ui-header h1 {
+    color: white;
+    text-shadow: none;
+}
+.ui-content {
+    margin: 20% 4em;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5em 3em;
+}
+a.ui-btn,
+a.ui-btn:hover,
+a.ui-btn:visited,
+button.ui-btn,
+button.ui-btn:hover,
+button.ui-btn:visited {
+    background: #60a726 !important;
+    color: white !important;
+    text-shadow: none;
+    margin-top: 3em;
+}
+.ui-controlgroup-label {
+    width: 100% !important;
+    margin: 1em !important;
+    float: none !important;
+}
+.ui-controlgroup-controls {
+    width: 100% !important;
+}
+.ui-content h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #60a726;
+}
+#perdiste .ui-content h2 {
+    color: #ab2f2f !important;
+}
+#registro .ui-content h2 {
+    font-size: 1.5em;
+}

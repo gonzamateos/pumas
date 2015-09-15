@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>Trivia Los Pumas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="themes/basic.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="phonegap.js" type="text/javascript"></script>
+    
+    <link href="includes/styles.css" rel="stylesheet" type="text/css"/>
+    <script src="includes/dbcontroller.js" type="text/javascript"></script>
+    <script src="includes/syncs.js" type="text/javascript"></script>
+    <script src="includes/functions.js" type="text/javascript"></script>
+    <script src="includes/init.js" type="text/javascript"></script>
+    
+</head>
+<body>
+    <div data-role="page" id="registro">
+        <div data-role="header" data-position="inline">
+            <h1>Trivia</h1>
+            <a data-icon="refresh" class="ui-btn-right" data-iconpos="notext" href="#nogo" onclick="serverSync();">Subir</a>
+        </div>
+        <div data-role="content">
+            <h2>Registro de Participantes</h2>
+            <form action="#nogo" method="post">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" value="" required />
+                </div>
+                <div>
+                    <label for="mail">e-mail</label>
+                    <input type="email" name="mail" id="mail" value="" required />
+                </div>
+                <div><button type="button" onclick="registrar();">REGISTRAR</button></div>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="preguntas">
+        <div data-role="header" data-position="inline">
+            <h1>Trivia</h1>
+            <a data-icon="refresh" class="ui-btn-right" data-iconpos="notext" href="#nogo" onclick="serverSync();">Subir</a>
+        </div>
+        <div data-role="content">
+            <form action="#nogo" method="post">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend>El Mundial de Rugby se juega en:</legend>
+                        <input type="radio" name="radio-choice-1" id="radio-choice-1" value="1" />
+                        <label for="radio-choice-1">Inglaterra & Gales</label>
+
+                        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="2" />
+                        <label for="radio-choice-2">Argentina & Uruguay</label>
+
+                        <input type="radio" name="radio-choice-1" id="radio-choice-3" value="3" />
+                        <label for="radio-choice-3">Trinidad & Tobago</label>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend>El equipo argentino de rugby se denomina:</legend>
+                        <input type="radio" name="radio-choice-2" id="radio-choice-4" value="4" />
+                        <label for="radio-choice-4">Los Tigres</label>
+
+                        <input type="radio" name="radio-choice-2" id="radio-choice-5" value="5" />
+                        <label for="radio-choice-5">Los Gatos</label>
+
+                        <input type="radio" name="radio-choice-2" id="radio-choice-6" value="6" />
+                        <label for="radio-choice-6">Los Pumas</label>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend>Un equipo de rugby posee:</legend>
+                        <input type="radio" name="radio-choice-3" id="radio-choice-7" value="7" />
+                        <label for="radio-choice-7">5 jugadores en campo</label>
+
+                        <input type="radio" name="radio-choice-3" id="radio-choice-8" value="8" />
+                        <label for="radio-choice-8">11 jugadores en campo</label>
+
+                        <input type="radio" name="radio-choice-3" id="radio-choice-9" value="9" />
+                        <label for="radio-choice-9">15 jugadores en campo</label>
+                    </fieldset>
+                </div>
+                <div><button type="button" onclick="responder();">SIGUIENTE</button></div>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="ganaste">
+        <div data-role="header" data-position="inline">
+            <h1>Trivia</h1>
+            <a data-icon="refresh" class="ui-btn-right" data-iconpos="notext" href="#nogo" onclick="serverSync();">Subir</a>
+        </div>
+        <div data-role="content">
+            <h2>GANASTE!!!</h2>
+            <div><a href="#registro" data-role="button">SIGUIENTE</a></div>
+        </div>
+    </div>
+    <div data-role="page" id="perdiste">
+        <div data-role="header" data-position="inline">
+            <h1>Trivia</h1>
+            <a data-icon="refresh" class="ui-btn-right" data-iconpos="notext" href="#nogo" onclick="serverSync();">Subir</a>
+        </div>
+        <div data-role="content">
+            <h2>PERDISTE!!!</h2>
+            <div><a href="#registro" data-role="button">SIGUIENTE</a></div>
+        </div>
+    </div>
+</body>
+</html>

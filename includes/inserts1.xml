@@ -1,0 +1,15 @@
+<sql>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (1, 'El Mundial de Rugby se juega en:');</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (2, 'El equipo argentino de rugby se denomina:');</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (3, 'Un equipo de rugby posee:');</statement>
+    
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (1, 1, 'Inglaterra & Gales', 1);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (2, 1, 'Argentina & Uruguay', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (3, 1, 'Trinidad & Tobago', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (4, 2, 'Los Tigres', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (5, 2, 'Los Gatos', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (6, 2, 'Los Pumas', 1);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (7, 3, '5 jugadores en campo', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (8, 3, '11 jugadores en campo', 0);</statement>
+    <statement>INSERT OR REPLACE INTO `preguntas` VALUES (9, 3, '15 jugadores en campo', 1);</statement>
+</sql>

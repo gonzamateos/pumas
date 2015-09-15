@@ -1,0 +1,29 @@
+<sql>
+    <statement>CREATE TABLE IF NOT EXISTS `registros` (
+        `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+        `nombre` TEXT NULL DEFAULT NULL,
+        `email` TEXT NULL DEFAULT NULL,
+        `rta1` INTEGER NULL DEFAULT NULL,
+        `rta2` INTEGER NULL DEFAULT NULL,
+        `rta3` INTEGER NULL DEFAULT NULL,
+        `gano` INTEGER NOT NULL DEFAULT 0
+        );</statement>
+        
+    <statement>CREATE TABLE IF NOT EXISTS `preguntas` (
+        `id` INTEGER PRIMARY KEY,
+        `pregunta` TEXT NULL DEFAULT NULL
+        );</statement>
+        
+    <statement>CREATE TABLE IF NOT EXISTS `respuestas` (
+        `id` INTEGER PRIMARY KEY,
+        `pregunta_id` INTEGER NOT NULL,
+        `respuesta` TEXT NULL DEFAULT NULL,
+        `correcta` INTEGER NOT NULL DEFAULT 0
+        );</statement>
+    <statement>CREATE TABLE IF NOT EXISTS `syncs` ( 
+        `id` INTEGER PRIMARY KEY AUTOINCREMENT, 
+        `func` TEXT NOT NULL, 
+        `vals` TEXT NULL, 
+        `state_id` INTEGER NOT NULL DEFAULT 1 
+        );</statement>
+</sql>
