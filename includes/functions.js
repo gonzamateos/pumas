@@ -22,7 +22,7 @@ function is_empty(obj) {
 
     return true;
 }
-function checkConnect(){return false;
+function checkConnect(){//return false;
     if(onweb){
         return true;
     }
@@ -66,6 +66,13 @@ function openPopup(msg){
 }
 function mylog(cosa){
     console.log(cosa);
+}
+
+function showLoading(){
+    return true;
+}
+function hideLoading(){
+    return true;
 }
 function registrar(){
     if( $.trim($('#nombre').val()) == '') { 

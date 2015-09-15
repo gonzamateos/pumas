@@ -46,12 +46,16 @@
     border-radius: 10px;
     padding: 1.5em 3em;
 }
-a.ui-btn,
-a.ui-btn:hover,
-a.ui-btn:visited,
-button.ui-btn,
-button.ui-btn:hover,
-button.ui-btn:visited {
+.ui-header a.ui-btn{
+    background: #60a726 !important;
+}
+
+.ui-content a.ui-btn,
+.ui-content a.ui-btn:hover,
+.ui-content a.ui-btn:visited,
+.ui-content button.ui-btn,
+.ui-content button.ui-btn:hover,
+.ui-content button.ui-btn:visited {
     background: #60a726 !important;
     color: white !important;
     text-shadow: none;

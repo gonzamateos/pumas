@@ -25,12 +25,12 @@ function serverSync(){
                     }
                     mylog(forsync);
                     $.ajax({
-                        url: responseUrl+'sync',
+                        url: responseUrl,
                         type: "POST", 
                         cache: false, 
                         dataType: 'jsonp',
                         callback: 'callback',
-                        data: '&forsync='+JSON.stringify(forsync)+'&json=true&sync=true',
+                        data: '&action=sync&forsync='+JSON.stringify(forsync)+'&sync=true',
                         success: function(data){ 
                             mylog('success');
                             mylog(data.content);
@@ -45,7 +45,9 @@ function serverSync(){
                             if(sw){
                                 updateDB("DELETE FROM `syncs` WHERE id IN (0"+oks+")");
                                 mylog("DELETE FROM `syncs` WHERE id IN (0"+oks+")");
+                                
                             }
+                            openPopup("Registros correctamente actualizados");
                         },beforeSend: function() {
                             mylog('beforeSend');
                             showLoading();
@@ -53,7 +55,7 @@ function serverSync(){
                         complete: function() {
                             mylog('complete');
                             syncing=false;
-                            srvsyncing=false;
+                            srvsyncing=false;openPopup
                             hideLoading();
                         },
                         error: function (obj, textStatus, errorThrown) {
@@ -61,10 +63,11 @@ function serverSync(){
                             srvsyncing=false;
                             mylog("status=" + textStatus + ",error=" + errorThrown);
                             hideLoading();
+                            openPopup("Error actualizando, vuelva a intentarlo.");
                         }
                     });
                 }else{
-                    mylog('Nada que sincronizar. '+srvsyncing);
+                    openPopup('Nada que sincronizar.');
                     syncing=false;
                     srvsyncing = false;
                 }
