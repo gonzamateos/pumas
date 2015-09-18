@@ -7,11 +7,15 @@ function serverSync(){
     if(checkConnect() && !srvsyncing){
         syncing=true;
         srvsyncing=true;
-        var query = "SELECT * FROM `syncs`";
+        var query = "SELECT * FROM `syncs` limit 10";
         
         db.transaction(function(tx){
             tx.executeSql(query, [], function(tx, results){
                 if(results.rows.length > 0){
+                    var more ="";
+                    if(results.rows.length>=10){
+                        more ="Sincronizacion parcial, pueden existir mas registros por sincronizar.";
+                    }
                     mylog(results.rows);
                     i = 0;
                     var forsync= new Array();
@@ -47,7 +51,7 @@ function serverSync(){
                                 mylog("DELETE FROM `syncs` WHERE id IN (0"+oks+")");
                                 
                             }
-                            openPopup("Registros correctamente actualizados");
+                            openPopup("Registros correctamente actualizados. "+more);
                         },beforeSend: function() {
                             mylog('beforeSend');
                             showLoading();
